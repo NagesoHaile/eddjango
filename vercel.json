@@ -1,8 +1,9 @@
 
 {
+    "version": 2,
     "builds": [{
         "src": "edir/wsgi.py",
-        "use": "@natanffs/vercel-python-wsgi",
+        "use": "@vercel/python",
         "config": { "maxLambdaSize": "15mb" , "runtime": "python3.9"}
     }],
     "routes": [
@@ -10,5 +11,8 @@
             "src": "/(.*)",
             "dest": "edir/wsgi.py"
         }
-    ]
+    ],
+    "env": {
+        "PYTHON_VERSION": "3.9"
+      }
 }
