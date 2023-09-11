@@ -7,6 +7,5 @@ SECRET_KEY = os.environ['SECRET_KEY']
 DEBUG = False
 
 
-ALLOWED_HOSTS = ['.vercel.app', 'edir-pi.vercel.app',
-                 'idir.vercel.app', 'eddjango.vercel.app']
+ALLOWED_HOSTS = ['*']
 DATABASES = {}
