@@ -173,4 +173,4 @@ SIMPLE_JWT = {
 
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://4f1d-213-55-85-43.ngrok-free.app', 'http://127.0.0.1:8000']
+    'https://4f1d-213-55-85-43.ngrok-free.app', 'http://127.0.0.1:8000', 'https://eddjango.vercel.app']
