@@ -3,6 +3,7 @@ from . import models
 from . import serializers
 from rest_framework.permissions import IsAdminUser
 from rest_framework.decorators import permission_classes
+from .permissions import IsAdminOrReadOnly
 # Generic views for the Profile Model
 
 
@@ -31,17 +32,26 @@ class MemberFamilyDetailView(generics.RetrieveUpdateDestroyAPIView):
 
 
 @permission_classes([IsAdminUser])
-class NotificationListCreateView(generics.ListCreateAPIView):
+class NotificationListCreateView(generics.RetrieveUpdateDestroyAPIView, generics.ListAPIView):
     queryset = models.Notification.objects.all()
     serializer_class = serializers.NotificationSerializer
+    permission_classes = [IsAdminOrReadOnly]
 
 
-class NotificationDetailView(generics.RetrieveUpdateDestroyAPIView):
+class NotificationListView(generics.ListAPIView,):
     queryset = models.Notification.objects.all()
     serializer_class = serializers.NotificationSerializer
+    permission_classes = [IsAdminOrReadOnly]
 
+
+class NotificationDetailView(generics.RetrieveAPIView,):
+    queryset = models.Notification.objects.all()
+    serializer_class = serializers.NotificationSerializer
+    permission_classes = [IsAdminOrReadOnly]
 
 # Generic views for the Contribution Model
+
+
 class ContributionListCreateView(generics.ListCreateAPIView):
     queryset = models.Contribution.objects.all()
     serializer_class = serializers.ContributionSerializer

@@ -6,13 +6,10 @@ urlpatterns = [
     path('member/profile/', views.ProfileListCreateView.as_view(), name='member-list'),
     path('member/profile/<int:pk>/',
          views.ProfileDetailView.as_view(), name='member-detail'),
-
-    # URL patterns for the Profile model
-    # path('member/profile/', views.MemberListCreateView.as_view(), name='member-list'),
-    # path('member/profile/<int:pk>/',
-    #      views.MemberDetailView.as_view(), name='member-detail'),
-
-
-
-    # Repeat the process for each model's URL patterns
+    path('notifications/', views.NotificationListView.as_view(),
+         name='notification-list'),
+    path('notifications/<int:pk>/',
+         views.NotificationDetailView.as_view(), name='-list'),
+    path('post/<int:pk>/',
+         views.ProfileDetailView.as_view(), name='member-detail'),
 ]

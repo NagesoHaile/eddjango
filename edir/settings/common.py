@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 CSRF_TRUSTED_ORIGINS = ['https://341b-213-55-85-43.ngrok-free.app/',
-                        'https://341b-213-55-85-43.ngrok-free.app/admin/login/,']
+                        'https://15d7-213-55-85-43.ngrok-free.app/admin/login/,']
 # Application definition
 
 INSTALLED_APPS = [
@@ -173,4 +173,7 @@ SIMPLE_JWT = {
 
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://4f1d-213-55-85-43.ngrok-free.app', 'http://127.0.0.1:8000', 'https://eddjango.vercel.app']
+    'https://4f1d-213-55-85-43.ngrok-free.app',
+    'http://127.0.0.1:8000',
+    'https://eddjango.vercel.app',
+    'https://15d7-213-55-85-43.ngrok-free.app']
