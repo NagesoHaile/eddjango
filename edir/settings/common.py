@@ -35,17 +35,16 @@ INSTALLED_APPS = [
 
 
     "authentication.apps.AuthenticationConfig",
-
+    "api.apps.ApiConfig",
 
     # third_part_apps
-    'allauth',
 
-    # 'allauth.account',
+
+
     'rest_framework',
     'djoser',
     'rest_framework.authtoken',
-    'dj_rest_auth',
-    'dj_rest_auth.registration',
+
     'corsheaders',
 ]
 
@@ -171,3 +170,7 @@ SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(days=1),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
 }
+
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://4f1d-213-55-85-43.ngrok-free.app', 'http://127.0.0.1:8000']

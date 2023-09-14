@@ -21,7 +21,8 @@ admin.AdminSite.site_title = 'Admin'
 admin.AdminSite.index_title = 'eDir Administration'
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/auth/', include('authentication.urls')),
+
     path('auth/', include('djoser.urls')),
     path('auth/', include('djoser.urls.jwt')),
+    path('api/', include('api.urls')),
 ]
